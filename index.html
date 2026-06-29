@@ -3,13 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ShambaNi Market - East Africa's Farmers Marketplace</title>
+    <title>ShambaNi Market (Beta) - East Africa's Farmers Marketplace</title>
     <meta name="description" content="Buy fresh produce direct from verified farmers across Uganda, Kenya, Tanzania & Rwanda." />
     <script type="module" crossorigin src="./assets/index-DLnKioph.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-DtgVGNXa.css" />
   </head>
   <body>
+    <!-- BETA BANNER -->
+    <div id="beta-banner" style="background:#f5a623;color:#1a1a1a;text-align:center;padding:10px 16px;font-family:sans-serif;font-size:14px;font-weight:600;position:relative;z-index:99999;">
+      🚧 BETA MODE — ShambaNi is in pilot testing. Some features are coming soon. <a href="https://wa.me/256708813419" style="color:#1a1a1a;text-decoration:underline;">WhatsApp us for early access!</a>
+    </div>
+    <!-- END BETA BANNER -->
+
     <div id="root"></div>
-    <script src="./shambani-live-effects.js"></script>
+
+    <!-- BETA FORM INTERCEPT -->
+    <script>
+      (function() {
+        function showBetaNotice() {
+          if (document.getElementById('beta-notice-modal')) return;
+          var modal = document.createElement('div');
+          modal.id = 'beta-notice-modal';
+          modal.innerHTML = '<div style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:100000;display:flex;align-items:center;justify-content:center;"><div style="background:#fff;padding:28px 32px;border-radius:12px;max-width:420px;text-align:center;font-family:sans-serif;"><h2 style="margin:0 0 12px;color:#f5a623;font-size:22px;">🚧 Beta Mode</h2><p style="margin:0 0 20px;color:#333;font-size:15px;line-height:1.5;">Farmer registration is opening soon! Leave your email and we will contact you the moment we go live.</p><input type="email" id="beta-email" placeholder="your@email.com" style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:6px;margin-bottom:12px;font-size:14px;box-sizing:border-box;"><button id="beta-notify-btn" style="background:#f5a623;color:#1a1a1a;border:none;padding:10px 20px;border-radius:6px;font-weight:600;cursor:pointer;font-size:14px;">Notify Me</button><button id="beta-close-btn" style="background:transparent;color:#666;border:none;padding:10px 16px;border-radius:6px;font-size:14px;cursor:pointer;margin-left:8px;">Close</button></div></div>';
+          document.body.appendChild(modal);
+          document.getElementById('beta-close-btn').onclick = function() { modal.remove(); };
+          document.getElementById('beta-notify-btn').onclick = function() {
+            var email = document.getElementById('beta-email').value;
+            if (email && email.indexOf('@') > 0) {
+              localStorage.setItem('shambani_beta_email', email);
+              alert('Thanks! We will email you at ' + email + ' when registration opens.');
+              modal.remove();
+            } else {
+              alert('Please enter a valid email address.');
+            }
+          };
+        }
+        // Intercept any form submit on the page
+        document.addEventListener('submit', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          showBetaNotice();
+          return false;
+        }, true);
+        // Also intercept button clicks that look like "Next" or "Submit" on registration page
+        document.addEventListener('click', function(e) {
+          var btn = e.target.closest('button');
+          if (!btn) return;
+          var text = (btn.textContent || btn.innerText || '').toLowerCase();
+          if (text.indexOf('next') !== -1 || text.indexOf('submit') !== -1 || text.indexOf('register') !== -1 || text.indexOf('finish') !== -1) {
+            // Check if we're on the farmer register page
+            if (location.hash.indexOf('farmer-register') !== -1 || location.pathname.indexOf('farmer-register') !== -1) {
+              e.preventDefault();
+              e.stopPropagation();
+              showBetaNotice();
+              return false;
+            }
+          }
+        }, true);
+      })();
+    </script>
+    <!-- END BETA FORM INTERCEPT -->
   </body>
 </html>
