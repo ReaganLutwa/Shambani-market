@@ -1,0 +1,68 @@
+/**
+ * ShambaNi Location Selector Styles
+ * Cascading Country → Region → District dropdowns
+ * File: src/components/LocationSelector/LocationSelector.css
+ */
+
+.location-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.location-selector .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.location-selector .form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+}
+
+.location-selector select,
+.location-selector input {
+  padding: 12px 14px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+  background: white;
+  cursor: pointer;
+}
+
+.location-selector select:focus,
+.location-selector input:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+}
+
+.location-selector select:disabled {
+  background: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.location-selector select option {
+  padding: 8px;
+}
+
+.country-select {
+  font-size: 15px;
+}
+
+.country-select option {
+  font-size: 14px;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .location-selector select,
+  .location-selector input {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}
