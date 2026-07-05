@@ -1,0 +1,527 @@
+/**
+ * ShambaNi Admin - Buyers Management Styles
+ * File: src/admin/components/BuyersManagement.css
+ */
+
+/* ===== Buyers Management ===== */
+.buyers-management {
+  padding: 24px;
+  max-width: 1200px;
+}
+
+.buyers-header h2 {
+  color: #1a6b2c;
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.buyers-header p {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Stats Cards */
+.buyers-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  border: 1px solid #f0f0f0;
+}
+
+.stat-card .stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a6b2c;
+}
+
+.stat-card .stat-label {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.stat-card.pending .stat-value { color: #f39c12; }
+.stat-card.approved .stat-value { color: #27ae60; }
+.stat-card.institutional .stat-value { color: #3498db; }
+.stat-card.individual .stat-value { color: #9b59b6; }
+
+/* Filters */
+.buyers-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-tab {
+  padding: 8px 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 20px;
+  background: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-tab:hover {
+  border-color: #27ae60;
+}
+
+.filter-tab.active {
+  background: #27ae60;
+  color: white;
+  border-color: #27ae60;
+}
+
+.tab-count {
+  background: rgba(255,255,255,0.3);
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.search-input {
+  padding: 10px 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 13px;
+  width: 300px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39,174,96,0.1);
+}
+
+/* Table */
+.buyers-table-wrapper {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.buyers-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.buyers-table th {
+  background: #f8f9fa;
+  color: #555;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.buyers-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f5f5f5;
+  vertical-align: top;
+}
+
+.buyers-table tr:hover td {
+  background: #fafbfc;
+}
+
+.buyer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.buyer-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.buyer-org {
+  font-size: 12px;
+  color: #666;
+}
+
+.buyer-contact {
+  font-size: 11px;
+  color: #999;
+}
+
+.buyer-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid;
+}
+
+.buyer-location {
+  color: #666;
+  font-size: 12px;
+}
+
+.procurement-volume {
+  text-transform: capitalize;
+  font-size: 12px;
+  color: #555;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.btn-view {
+  padding: 6px 14px;
+  border: 1.5px solid #27ae60;
+  background: white;
+  color: #27ae60;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-view:hover {
+  background: #27ae60;
+  color: white;
+}
+
+/* ===== Modal ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  width: 700px;
+  max-height: 85vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  margin: 0;
+}
+
+.modal-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #f5f5f5;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+}
+
+.modal-tabs {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-tabs button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: none;
+  font-size: 13px;
+  cursor: pointer;
+  color: #888;
+  border-bottom: 2px solid transparent;
+}
+
+.modal-tabs button.active {
+  color: #27ae60;
+  border-bottom-color: #27ae60;
+  font-weight: 600;
+}
+
+.modal-body {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.detail-group {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.detail-group h4 {
+  color: #1a6b2c;
+  font-size: 13px;
+  margin: 0 0 10px;
+}
+
+.detail-group p {
+  margin: 4px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+/* Verification */
+.verification-section h4 {
+  color: #1a6b2c;
+  margin-bottom: 12px;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.check-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #27ae60;
+}
+
+.check-item label {
+  font-size: 13px;
+  color: #555;
+}
+
+.verification-notes {
+  margin: 16px 0;
+}
+
+.verification-notes label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.verification-notes textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 13px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.verification-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn-approve {
+  padding: 10px 24px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-reject {
+  padding: 10px 24px;
+  background: white;
+  color: #e74c3c;
+  border: 1.5px solid #e74c3c;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.verification-history {
+  margin-top: 16px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+/* ===== Unified Verification Queue ===== */
+.unified-verification {
+  padding: 24px;
+}
+
+.verification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.verification-header h2 {
+  color: #1a6b2c;
+  font-size: 22px;
+}
+
+.pending-badge {
+  background: #f39c12;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.verification-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.verification-tabs button {
+  padding: 10px 20px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  background: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.verification-tabs button.active {
+  background: #27ae60;
+  color: white;
+  border-color: #27ae60;
+}
+
+.verification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.verification-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.item-info strong {
+  color: #333;
+}
+
+.item-info span {
+  font-size: 12px;
+  color: #888;
+}
+
+.buyer-type-tag {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.item-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-approve-sm, .btn-reject-sm, .btn-view-sm {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-approve-sm { background: #e8f8f5; color: #27ae60; }
+.btn-reject-sm { background: #fdedec; color: #e74c3c; }
+.btn-view-sm { background: #ebf5fb; color: #3498db; width: auto; padding: 0 12px; font-size: 12px; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .buyers-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .buyers-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-input {
+    width: 100%;
+  }
+  .buyers-table-wrapper {
+    overflow-x: auto;
+  }
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal-content {
+    width: 95%;
+    max-height: 90vh;
+  }
+}

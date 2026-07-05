@@ -1,0 +1,499 @@
+/**
+ * ShambaNi - For Buyers Page Styles
+ * File: src/pages/ForBuyers.css
+ */
+
+.for-buyers-page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #333;
+}
+
+/* ===== Hero ===== */
+.buyers-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 80px 60px;
+  background: linear-gradient(135deg, #0d3b1a 0%, #1a6b2c 50%, #27ae60 100%);
+  color: white;
+  min-height: 500px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.buyers-hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.buyers-hero p {
+  font-size: 17px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 28px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.btn-primary {
+  padding: 14px 28px;
+  background: white;
+  color: #1a6b2c;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+  padding: 14px 28px;
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+}
+
+.hero-trust {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.produce-showcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.produce-item {
+  font-size: 48px;
+  padding: 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 16px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  animation: float 3s ease-in-out infinite;
+}
+
+.produce-item:nth-child(2) { animation-delay: 0.5s; }
+.produce-item:nth-child(3) { animation-delay: 1s; }
+.produce-item:nth-child(4) { animation-delay: 1.5s; }
+.produce-item:nth-child(5) { animation-delay: 2s; }
+.produce-item:nth-child(6) { animation-delay: 2.5s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ===== Section Headers ===== */
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  color: #1a6b2c;
+  margin-bottom: 8px;
+}
+
+.section-header p {
+  color: #888;
+  font-size: 16px;
+}
+
+/* ===== Benefits ===== */
+.buyers-benefits {
+  padding: 80px 60px;
+  background: #f8f9fa;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+}
+
+.benefit-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.benefit-card h3 {
+  font-size: 18px;
+  color: #1a6b2c;
+  margin-bottom: 8px;
+}
+
+.benefit-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ===== Buyer Types ===== */
+.buyer-types {
+  padding: 80px 60px;
+}
+
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.type-card {
+  background: white;
+  border: 1.5px solid #f0f0f0;
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.type-card:hover {
+  border-color: #27ae60;
+  box-shadow: 0 4px 20px rgba(39,174,96,0.1);
+}
+
+.type-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.type-card h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.type-card p {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.type-cta {
+  color: #27ae60;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.type-cta:hover {
+  text-decoration: underline;
+}
+
+/* ===== How It Works ===== */
+.how-it-works {
+  padding: 80px 60px;
+  background: #f8f9fa;
+}
+
+.steps-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 20px 0;
+  position: relative;
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a6b2c, #27ae60);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.step-content p {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.5;
+}
+
+.step-connector {
+  position: absolute;
+  left: 24px;
+  top: 68px;
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, #27ae60, #e0e0e0);
+}
+
+/* ===== Pricing ===== */
+.buyer-pricing {
+  padding: 80px 60px;
+}
+
+.pricing-card {
+  max-width: 700px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #1a6b2c, #27ae60);
+  color: white;
+  padding: 48px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.pricing-card h2 {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.pricing-highlight {
+  margin: 32px 0;
+}
+
+.pricing-highlight .price {
+  font-size: 72px;
+  font-weight: 800;
+  display: block;
+  line-height: 1;
+}
+
+.pricing-highlight .price-label {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.pricing-card > p {
+  font-size: 15px;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.pricing-compare {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.compare-item {
+  text-align: center;
+}
+
+.compare-item strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.compare-item span {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.compare-item.vs {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* ===== CTA ===== */
+.buyers-cta {
+  padding: 80px 60px;
+  text-align: center;
+  background: #f8f9fa;
+}
+
+.buyers-cta h2 {
+  font-size: 32px;
+  color: #1a6b2c;
+  margin-bottom: 12px;
+}
+
+.buyers-cta > p {
+  color: #888;
+  font-size: 16px;
+  margin-bottom: 32px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.btn-primary-large {
+  padding: 16px 36px;
+  background: linear-gradient(135deg, #1a6b2c, #27ae60);
+  color: white;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-primary-large:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26,107,44,0.3);
+}
+
+.btn-outline-large {
+  padding: 16px 36px;
+  background: white;
+  color: #1a6b2c;
+  border: 2px solid #1a6b2c;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-outline-large:hover {
+  background: #1a6b2c;
+  color: white;
+}
+
+.cta-note {
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* ===== FAQ ===== */
+.buyers-faq {
+  padding: 80px 60px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.faq-item h4 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.faq-item p {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.6;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .buyers-hero {
+    grid-template-columns: 1fr;
+    padding: 40px 24px;
+    text-align: center;
+  }
+  .buyers-hero h1 {
+    font-size: 28px;
+  }
+  .hero-buttons {
+    justify-content: center;
+  }
+  .hero-trust {
+    justify-content: center;
+  }
+  .produce-showcase {
+    display: none;
+  }
+  .benefits-grid,
+  .types-grid {
+    grid-template-columns: 1fr;
+  }
+  .pricing-compare {
+    flex-direction: column;
+  }
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

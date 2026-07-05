@@ -1,0 +1,395 @@
+/**
+ * ShambaNi Buyer Registration Styles
+ * File: src/components/BuyerRegistration/BuyerRegistration.css
+ */
+
+.buyer-registration {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.registration-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.registration-header h1 {
+  color: #1a6b2c;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.registration-header p {
+  color: #666;
+  font-size: 16px;
+}
+
+/* Progress Steps */
+.progress-steps {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-top: 30px;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+.progress-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 60%;
+  width: 80%;
+  height: 2px;
+  background: #e0e0e0;
+}
+
+.progress-step.completed:not(:last-child)::after {
+  background: #27ae60;
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+.progress-step.active .step-number {
+  background: #27ae60;
+  color: white;
+  box-shadow: 0 0 0 4px rgba(39, 174, 96, 0.2);
+}
+
+.progress-step.completed .step-number {
+  background: #27ae60;
+  color: white;
+}
+
+.step-label {
+  font-size: 11px;
+  color: #999;
+  margin-top: 6px;
+}
+
+.progress-step.active .step-label {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+/* Form Steps */
+.registration-form {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+
+.form-step h2 {
+  color: #1a6b2c;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.step-description {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* Buyer Type Grid */
+.buyer-type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.buyer-type-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 16px;
+  border: 2px solid #e8e8e8;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.buyer-type-card:hover {
+  border-color: #27ae60;
+  background: #f8fff9;
+}
+
+.buyer-type-card.selected {
+  border-color: #27ae60;
+  background: #e8f5e9;
+  box-shadow: 0 2px 8px rgba(39, 174, 96, 0.15);
+}
+
+.buyer-type-icon {
+  font-size: 28px;
+}
+
+.buyer-type-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+/* Form Fields */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 14px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Category Grid */
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.category-btn {
+  padding: 8px 14px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 20px;
+  background: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.category-btn:hover {
+  border-color: #27ae60;
+}
+
+.category-btn.selected {
+  background: #27ae60;
+  color: white;
+  border-color: #27ae60;
+}
+
+/* Checkbox */
+.checkbox-group {
+  flex-direction: row !important;
+  align-items: flex-start;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: #27ae60;
+}
+
+.checkbox-label a {
+  color: #27ae60;
+}
+
+/* Error */
+.error-text {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.error-banner {
+  background: #fdedec;
+  color: #e74c3c;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+/* Navigation */
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+}
+
+.btn-primary {
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #1a6b2c, #27ae60);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(26, 107, 44, 0.3);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  padding: 12px 24px;
+  background: white;
+  color: #555;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: #27ae60;
+  color: #27ae60;
+}
+
+/* Success State */
+.registration-success {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.success-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.registration-success h2 {
+  color: #1a6b2c;
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.registration-success p {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.success-details {
+  background: #f8fff9;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 24px 0;
+  text-align: left;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.success-details p {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.success-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 24px 0;
+}
+
+.success-note {
+  font-size: 13px !important;
+  color: #888 !important;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .buyer-type-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .registration-form {
+    padding: 20px;
+  }
+  
+  .form-navigation {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%;
+  }
+}
